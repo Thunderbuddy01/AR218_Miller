@@ -1,3 +1,54 @@
-[gd_scene format=2]
+[gd_scene load_steps=13 format=2]
 
-[node name="Player" type="Node2D"]
+[ext_resource path="res://PlayerSprites/sprite_walk 1_final.png" type="Texture" id=1]
+[ext_resource path="res://PlayerSprites/sprite_climb 1_final.png" type="Texture" id=2]
+[ext_resource path="res://PlayerSprites/sprite_walk 4_final.png" type="Texture" id=3]
+[ext_resource path="res://PlayerSprites/sprite_idle_final.png" type="Texture" id=4]
+[ext_resource path="res://PlayerSprites/sprite_walk 3_final.png" type="Texture" id=5]
+[ext_resource path="res://PlayerSprites/sprite_crouch_final.png" type="Texture" id=6]
+[ext_resource path="res://PlayerSprites/sprite_climb 2_final.png" type="Texture" id=7]
+[ext_resource path="res://PlayerSprites/sprite_walk 2_final.png" type="Texture" id=8]
+[ext_resource path="res://PlayerSprites/sprite_jump_final.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 35.5845
+height = 209.906
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
