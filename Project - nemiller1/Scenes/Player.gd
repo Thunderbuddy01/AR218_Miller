@@ -24,10 +24,10 @@ func _physics_process(delta):
 		velocity.y += jump
 	if not is_on_floor():
 		$AnimatedSprite.play ("jump")
-		velocity.y += GRAVITY
-
 	
-	velocity.x = lerp(velocity.x, 0, 0.1)
-	print(velocity)
+	velocity.y += GRAVITY
+
 	move_and_slide(velocity,Vector2.UP)
+	print(velocity)
+	velocity.x = lerp(velocity.x, 0, 0.1)
 	
