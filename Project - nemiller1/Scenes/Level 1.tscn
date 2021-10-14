@@ -10,14 +10,14 @@
 [ext_resource path="res://Scenes/ScoreLabel.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4231.81, 45.6499 )
-
 [sub_resource type="CanvasItemMaterial" id=2]
 blend_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 3
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4231.81, 45.6499 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.941176, 1, 1, 0.239216 )
@@ -35,6 +35,28 @@ font_data = ExtResource( 7 )
 
 [node name="Level1" type="Node2D"]
 position = Vector2( 0, 2 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+material = SubResource( 2 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+material = SubResource( 3 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+centered = false
 
 [node name="Rug" type="Node2D" parent="."]
 
@@ -56,7 +78,11 @@ smoothing_enabled = true
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 1688.57, 457.592 )
+position = Vector2( 1294.53, 455.492 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 307.106, 455.492 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 9 )]
@@ -107,28 +133,6 @@ position = Vector2( 2856.59, 456.009 )
 
 [node name="Collectable6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2992.74, 455.095 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.8, 0.8 )
-motion_mirroring = Vector2( 2048, 2048 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-material = SubResource( 2 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
-centered = false
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.2, 0.2 )
-motion_mirroring = Vector2( 2048, 2048 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-material = SubResource( 3 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 6 )
-centered = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

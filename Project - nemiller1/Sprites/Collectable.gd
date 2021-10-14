@@ -6,7 +6,6 @@ func _on_Collectable_body_entered(body):
 	$AnimationPlayer.play("Bounce")
 	Global.score = Global.score + 1
 	emit_signal("youre_richer")
-	print(Global.score)
 	set_collision_layer_bit(3, false)
 	set_collision_mask_bit(0, false)
 
