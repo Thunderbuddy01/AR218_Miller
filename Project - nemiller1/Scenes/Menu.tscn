@@ -1,0 +1,159 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Roboto_Mono/static/RobotoMono-MediumItalic.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/item 4.png" type="Texture" id=2]
+[ext_resource path="res://Roboto_Mono/static/RobotoMono-BoldItalic.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://PlayerSprites/sprite_idle_final.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/item 3.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Menu.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0.470588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.541176, 0.521569, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 44
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0.470588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.466667, 0, 0.470588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 1, 0, 1, 1 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 1, 0, 0, 0.313726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_right = 1284.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 1 )
+text = "ThunderBuddy01's Life - 
+A Simple Video Game"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title2" type="Label" parent="."]
+margin_top = 195.828
+margin_right = 1284.0
+margin_bottom = 282.828
+custom_fonts/font = SubResource( 1 )
+text = "By Nicholas Miller, 2021"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 18.0
+margin_top = 458.0
+margin_right = 274.0
+margin_bottom = 714.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 1013.73
+margin_top = 455.553
+margin_right = 1269.73
+margin_bottom = 711.553
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 365.0
+margin_top = 450.0
+margin_right = 919.0
+margin_bottom = 515.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 365.0
+margin_top = 530.02
+margin_right = 919.0
+margin_bottom = 595.02
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "ARTIST STATEMENT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 365.0
+margin_top = 609.59
+margin_right = 919.0
+margin_bottom = 674.59
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "HOW TO PLAY THIS GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = 31.288
+margin_top = 232.782
+margin_right = 287.288
+margin_bottom = 488.782
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+margin_left = 1002.47
+margin_top = 206.501
+margin_right = 1258.47
+margin_bottom = 462.501
+texture = ExtResource( 4 )
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
