@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Roboto_Mono/static/RobotoMono-MediumItalic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Artist Statement.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.470588, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.541176, 0.521569, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.470588, 0, 0.470588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 0, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0.470588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 1, 0, 1 )
+
+[node name="Artist Statement" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0.5, 0.494118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Artist Statement" type="Label" parent="."]
+margin_left = 10.0
+margin_right = 1269.0
+margin_bottom = 697.0
+custom_fonts/font = SubResource( 1 )
+text = "Artist Statement:
+This is a simplistic game showcasing all of the things that matter most to me (ThunderBuddy01) not only as a YouTube content creator, but also as a person. The coins - as collectables - I care about because it helps me expand my horizons for content ideas, gives me more motivation to create videos, and it helps me get through school. The Computer - as a platform - I care about the most because it's the same computer that helped make this project possible; this is a Late 2013 13-inch Retina MacBook Pro, which has been my computer ever since 8th grade, and it means a lot to me as one of the best computers I've ever had. The Radio, showcased in the menu, is the main driving force of my YouTube career; I've been collecting radios for over 7 years at the time of this game's creation (Fall 2021), and I've built a collection that most normal people would consider an obsession. The NASCAR™ diecast represents my passion for motorsports and my love of cars. 
+
+The Enemy - a transparent version of the main character - represents the negative energy I have faced and battled with over the years as an individual both inside and outside the home and social media. There's too many instances of this to fit into this one statement, but it's enough for me to portray it as an enemy figure.
+
+As a player of this game, I hope that you can take the time out of this game and enjoy it, despite its minimalist nature. "
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 28.0
+margin_top = 664.0
+margin_right = 339.0
+margin_bottom = 709.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "BACK TO MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 468.046
+margin_top = 664.0
+margin_right = 779.046
+margin_bottom = 709.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "HOW TO PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 943.22
+margin_top = 659.686
+margin_right = 1254.23
+margin_bottom = 704.686
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "PLAY GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
