@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/nemiller1 - Level 1 Song (33 sec, loop).ogg-6a8958c6415215ad97d6d74f59eab9dc.oggstr"
+
+[deps]
+
+source_file="res://Sounds/nemiller1 - Level 1 Song (33 sec, loop).ogg"
+dest_files=[ "res://.import/nemiller1 - Level 1 Song (33 sec, loop).ogg-6a8958c6415215ad97d6d74f59eab9dc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -15,11 +15,14 @@ func _physics_process(delta):
 		velocity.x = -speed
 		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = true
+	elif Input.is_action_pressed("crouch"):
+		$AnimatedSprite.play("crouch")
 	else:
 		$AnimatedSprite.play("idle")
 	#show with "pressed"
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += jump
+		$JumpSound.play()
 		
 	if not is_on_floor():
 		$AnimatedSprite.play("jump")

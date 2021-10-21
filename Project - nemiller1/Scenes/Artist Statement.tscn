@@ -23,16 +23,16 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.470588, 0, 0.470588, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 1, 0, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0.470588, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 1, 0, 1 )
 
 [node name="Artist Statement" type="Node2D"]
@@ -63,7 +63,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
+[node name="Menu" type="Button" parent="."]
 margin_left = 28.0
 margin_top = 664.0
 margin_right = 339.0
@@ -77,13 +77,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="."]
+[node name="HowTo" type="Button" parent="."]
 margin_left = 468.046
 margin_top = 664.0
 margin_right = 779.046
 margin_bottom = 709.0
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 text = "HOW TO PLAY"
@@ -91,13 +91,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button3" type="Button" parent="."]
+[node name="Play" type="Button" parent="."]
 margin_left = 943.22
 margin_top = 659.686
 margin_right = 1254.23
 margin_bottom = 704.686
 custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 7 )
+custom_styles/pressed = SubResource( 9 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 text = "PLAY GAME"
@@ -105,5 +105,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="HowTo" to="." method="_on_HowTo_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]

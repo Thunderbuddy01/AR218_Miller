@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Roboto_Mono/static/RobotoMono-MediumItalic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/item 4.png" type="Texture" id=2]
@@ -8,15 +8,16 @@
 [ext_resource path="res://Scenes/Menu.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/item 2-1.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/item 2-2.png" type="Texture" id=8]
+[ext_resource path="res://Sounds/nemiller1 - Menu song (33 sec, loop).ogg" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 65
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0.470588, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 1, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
@@ -28,16 +29,16 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0.470588, 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.466667, 0, 0.470588, 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 1, 0, 1, 1 )
 
 [node name="Menu" type="Node2D"]
@@ -100,8 +101,8 @@ margin_left = 365.0
 margin_top = 450.0
 margin_right = 919.0
 margin_bottom = 515.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 text = "PLAY"
@@ -114,8 +115,8 @@ margin_left = 365.0
 margin_top = 530.02
 margin_right = 919.0
 margin_bottom = 595.02
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 text = "ARTIST STATEMENT"
@@ -128,8 +129,8 @@ margin_left = 365.0
 margin_top = 609.59
 margin_right = 919.0
 margin_bottom = 674.59
-custom_styles/hover = SubResource( 10 )
-custom_styles/pressed = SubResource( 11 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 text = "HOW TO PLAY"
@@ -178,5 +179,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

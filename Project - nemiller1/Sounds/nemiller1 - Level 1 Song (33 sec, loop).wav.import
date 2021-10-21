@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/nemiller1 - Level 1 Song (33 sec, loop).wav-3413ef1ad5521aa70ab9e30a7817448f.sample"
+
+[deps]
+
+source_file="res://Sounds/nemiller1 - Level 1 Song (33 sec, loop).wav"
+dest_files=[ "res://.import/nemiller1 - Level 1 Song (33 sec, loop).wav-3413ef1ad5521aa70ab9e30a7817448f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

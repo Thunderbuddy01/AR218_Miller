@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://PlayerSprites/sprite_idle_final.png" type="Texture" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -18,14 +19,32 @@ __meta__ = {
 
 [node name="Instructions" type="Label" parent="."]
 margin_left = 14.0
-margin_right = 1267.0
+margin_right = 1264.0
 margin_bottom = 720.0
 custom_fonts/font = SubResource( 1 )
 text = "Instructions
 W/UP/Spacebar - Jump
 A/D or LEFT/RIGHT - Move Left/Right
-S or DOWN - Crouch"
+S or DOWN - Crouch
+
+Avoid these people shown below
+
+
+
+
+These are the enemy characters. You will lose half of your health upon contact. If you touch them too many times, your health will zero-out and you will lose.
+
+To win the game, simply reach the end of the level and avoid all contact with the enemy characters as possible.
+
+Be sure to pick up any collectables too; those are how you build up a score!"
 align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="sprite_idle_final" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.486275 )
+position = Vector2( 637.431, 291.262 )
+scale = Vector2( 0.481212, 0.481212 )
+texture = ExtResource( 2 )
