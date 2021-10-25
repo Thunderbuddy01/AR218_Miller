@@ -1,12 +1,40 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlayerSprites/sprite_idle_final.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Instructions.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/Instructions.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0.470588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.541176, 0.521569, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.470588, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0.470588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 1, 0, 1 )
 
 [node name="Instructions" type="Node2D"]
 script = ExtResource( 3 )
@@ -50,3 +78,53 @@ modulate = Color( 0, 0, 0, 0.486275 )
 position = Vector2( 637.431, 291.262 )
 scale = Vector2( 0.481212, 0.481212 )
 texture = ExtResource( 2 )
+
+[node name="ArtistStatement" type="Button" parent="."]
+margin_left = 506.114
+margin_top = 669.291
+margin_right = 817.114
+margin_bottom = 714.291
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "ARTIST STATEMENT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 68.3221
+margin_top = 669.291
+margin_right = 379.322
+margin_bottom = 714.291
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "BACK TO MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+margin_left = 937.937
+margin_top = 669.291
+margin_right = 1248.94
+margin_bottom = 714.291
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[connection signal="pressed" from="ArtistStatement" to="." method="_on_ArtistStatement_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
