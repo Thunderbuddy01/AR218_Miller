@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Button.gd" type="Script" id=1]
 [ext_resource path="res://Roboto_Mono/static/RobotoMono-BoldItalic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Scenes/Game Over.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/GameOver.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -43,12 +43,11 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 margin_left = 15.0
 margin_right = 1265.0
-margin_bottom = 720.0
+margin_bottom = 541.0
 custom_fonts/font = SubResource( 1 )
 text = "x_x
-GAME OVER
-
-"
+YOU LOSE!
+GAME OVER"
 align = 1
 valign = 1
 __meta__ = {

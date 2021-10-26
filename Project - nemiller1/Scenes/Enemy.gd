@@ -36,7 +36,7 @@ func _on_player_checker_body_entered(body):
 	if body.name == "Player":
 		body.energy = body.energy - 5
 		if body.energy <= 0:
-			get_tree().change_scene("res://Scenes/Level 1.tscn")
+			get_tree().change_scene("res://Scenes/GameOver.tscn")
 		$Fade_Timer.start()
 		$AnimatedSprite.playing = false
 		set_collision_layer_bit(5, false)

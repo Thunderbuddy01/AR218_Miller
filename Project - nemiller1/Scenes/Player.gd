@@ -35,5 +35,7 @@ func _physics_process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	get_tree().change_scene("res://Scenes/Level 1.tscn")
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
+
+func _on_Goal_body_shape_entered(body_id, body, body_shape, local_shape):
+	get_tree().change_scene("res://Scenes/WinScreen.tscn")
