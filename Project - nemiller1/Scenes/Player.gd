@@ -4,7 +4,9 @@ var velocity := Vector2(0,0)
 export var speed := 180
 export var jump := -1100
 export var energy := 10
+export var max_energy = 10
 const GRAVITY := 35
+signal update_health_bar(energy)
 
 func _physics_process(delta):
 	if Input.is_action_pressed("right"):

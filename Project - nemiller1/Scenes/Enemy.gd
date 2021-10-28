@@ -34,13 +34,15 @@ func flip_enemy():
 
 func _on_player_checker_body_entered(body):
 	if body.name == "Player":
-		body.energy = body.energy - 5
+		$AudioStreamPlayer2D.play()
+		body.energy = body.energy - 2
 		if body.energy <= 0:
 			get_tree().change_scene("res://Scenes/GameOver.tscn")
 		$Fade_Timer.start()
 		$AnimatedSprite.playing = false
-		set_collision_layer_bit(5, false)
+		set_collision_layer_bit(4, false)
 		set_collision_mask_bit(0, false)
+		body.emit_signal("update_health_bar",body.energy)
 		speed = 0
 
 func _on_Fade_Timer_timeout():

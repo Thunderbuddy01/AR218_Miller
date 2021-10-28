@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Platform1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Sprites/Nascar.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Sprites/Radio.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/health_bar.gd" type="Script" id=14]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -22,6 +23,20 @@ blend_mode = 3
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8508.7, 45.6499 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 0, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 1
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.941176, 1, 1, 0.239216 )
@@ -93,32 +108,40 @@ smoothing_enabled = true
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 1294.53, 455.492 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 1737.14, 455.492 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 1297.59, 469.767 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 2181.99, 457.592 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 2185.05, 471.867 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 1740.2, 469.767 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 6343.46, 455.751 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 6346.52, 470.026 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 6415.35, 455.751 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 6418.41, 470.026 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 6747.6, 455.751 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 6750.66, 470.026 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 6820.89, 455.751 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 6823.95, 470.026 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 7159.27, 470.026 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 7232.56, 470.026 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Goal" parent="." instance=ExtResource( 13 )]
 position = Vector2( 9058.5, 462.647 )
@@ -173,14 +196,6 @@ position = Vector2( 6370.94, 183.57 )
 
 [node name="Collectable8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 6807.2, 183.57 )
-
-[node name="Enemy8" parent="." instance=ExtResource( 9 )]
-position = Vector2( 7156.21, 455.751 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="Enemy9" parent="." instance=ExtResource( 9 )]
-position = Vector2( 7229.5, 455.751 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Collectable9" parent="." instance=ExtResource( 4 )]
 position = Vector2( 7215.8, 183.57 )
@@ -241,6 +256,22 @@ position = Vector2( 7655.92, 477.368 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
+[node name="health_bar" type="ProgressBar" parent="HUD"]
+margin_left = 50.184
+margin_top = 137.274
+margin_right = 353.184
+margin_bottom = 170.274
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+max_value = 10.0
+step = 1.0
+value = 10.0
+percent_visible = false
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Panel" type="Panel" parent="HUD"]
 margin_left = 50.0
 margin_top = 51.0
@@ -257,7 +288,7 @@ margin_top = 56.4825
 margin_right = 324.141
 margin_bottom = 125.483
 custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0, 1, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "How Rich Are Ya?
 Coins = 0"
@@ -267,6 +298,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="update_health_bar" from="Player" to="HUD/health_bar" method="_on_Player_update_health_bar"]
 [connection signal="body_shape_entered" from="Goal" to="Player" method="_on_Goal_body_shape_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="youre_richer" from="Collectable" to="HUD/ScoreLabel" method="_on_Collectable_youre_richer"]

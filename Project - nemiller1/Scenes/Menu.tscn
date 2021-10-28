@@ -149,10 +149,10 @@ __meta__ = {
 }
 
 [node name="TextureRect4" type="TextureRect" parent="."]
-margin_left = 1002.47
-margin_top = 206.501
-margin_right = 1258.47
-margin_bottom = 462.501
+margin_left = 1010.57
+margin_top = 214.601
+margin_right = 1266.57
+margin_bottom = 470.601
 texture = ExtResource( 4 )
 flip_h = true
 __meta__ = {

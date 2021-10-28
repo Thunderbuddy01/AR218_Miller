@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Button.gd" type="Script" id=1]
 [ext_resource path="res://Roboto_Mono/static/RobotoMono-BoldItalic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scenes/GameOver.gd" type="Script" id=4]
+[ext_resource path="res://Sounds/LoseSong.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -83,6 +84,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="pressed" from="Retry" to="." method="_on_Retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
