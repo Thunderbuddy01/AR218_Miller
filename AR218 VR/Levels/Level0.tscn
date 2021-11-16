@@ -1,13 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Materials/White.material" type="Material" id=3]
+[ext_resource path="res://CatPhotos/cat1.png" type="Texture" id=4]
+[ext_resource path="res://Sheep.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
 
 [sub_resource type="BoxShape" id=2]
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 4 )
 
 [node name="Level0" type="Spatial"]
 
@@ -29,3 +36,27 @@ transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0
 shadow_enabled = true
 
 [node name="FirstPersonPlayer" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1.22162, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Sheep" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.371248, 0, 0, 0, 0.371248, 0, 0, 0, 0.742497, 0, 0, -11.8499 )
+
+[node name="Sheep2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.371248, 0, 0, 0, 0.371248, 0, 0, 0, 0.742497, 5.89, 0, -11.8499 )
+
+[node name="Sheep3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.371248, 0, 0, 0, 0.371248, 0, 0, 0, 0.742497, 2.80795, -4.76837e-07, -16.114 )
+
+[node name="Sheep4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.226946, 0, 0.587608, 0, 0.371248, 0, -0.293804, 0, 0.453893, -8.3291, 2.38419e-07, -5.60851 )
+
+[node name="Sheep5" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.226946, 0, 0.587608, 0, 0.371248, 0, -0.293804, 0, 0.453893, -4.72851, 2.38419e-07, -10.2698 )
+
+[node name="Sheep6" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.226946, 0, 0.587608, 0, 0.371248, 0, -0.293804, 0, 0.453893, -9.98709, -2.38419e-07, -10.4373 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.611306, 0, 0.791394, 0, 1, 0, -0.791394, 0, 0.611306, -0.0130134, 7.81247, -4.46881 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )

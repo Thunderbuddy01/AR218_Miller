@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Materials/Red.material" type="Material" id=1]
+[ext_resource path="res://Materials/KetchupRed.tres" type="Material" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="CubeMesh" id=5]
+
+[node name="Sheep" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Body" type="MeshInstance" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 3.80883, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="head" type="MeshInstance" parent="Body"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.428781, 0.950223 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Hair1" type="MeshInstance" parent="Body"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.817152, 1.05312, 0.950224 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Hair2" type="MeshInstance" parent="Body"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.752881, 1.05312, 0.950224 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Face" type="MeshInstance" parent="Body"]
+transform = Transform( 0.5, 0, 0, 0, 0.450069, 0, 0, 0, 0.212079, 0, 0.398023, 1.2206 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 2 )
+
+[node name="Leg" type="MeshInstance" parent="Body"]
+transform = Transform( 0.113515, 0, 0, 0, 0.5, 0, 0, 0, 0.102577, -0.681819, -1.37458, 0.751095 )
+mesh = SubResource( 5 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg2" type="MeshInstance" parent="Body"]
+transform = Transform( 0.113515, 0, 0, 0, 0.5, 0, 0, 0, 0.102577, -0.680236, -1.37458, -0.76984 )
+mesh = SubResource( 5 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg3" type="MeshInstance" parent="Body"]
+transform = Transform( 0.113515, 0, 0, 0, 0.5, 0, 0, 0, 0.102577, 0.681936, -1.37153, 0.750803 )
+mesh = SubResource( 5 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg4" type="MeshInstance" parent="Body"]
+transform = Transform( 0.113515, 0, 0, 0, 0.5, 0, 0, 0, 0.102577, 0.681936, -1.37153, -0.769698 )
+mesh = SubResource( 5 )
+material/0 = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
