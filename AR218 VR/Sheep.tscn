@@ -14,7 +14,6 @@
 [sub_resource type="CubeMesh" id=5]
 
 [node name="Sheep" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Body" type="MeshInstance" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 3.80883, 0 )
