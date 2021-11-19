@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.235294, 0.235294, 0.235294, 1 )
+
+[node name="Laptop" type="Spatial"]
+
+[node name="Bottom" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.140635, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Top" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.036399, -0.965926, 0, 0.135843, 0.258819, 0, 0.880815, -1.17463 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
