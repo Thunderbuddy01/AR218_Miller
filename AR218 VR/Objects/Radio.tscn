@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.819608, 0.819608, 0.819608, 1 )
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0.435294, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 1, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0, 0.321569, 1, 1 )
+
+[node name="Radio" type="Spatial"]
+
+[node name="Body" type="MeshInstance" parent="."]
+transform = Transform( 0.212926, 0, 0, 0, 0.0293583, 0, 0, 0, 0.274677, 6.92531e-06, 0.00260092, -1.48714e-05 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Speaker Grill" type="MeshInstance" parent="."]
+transform = Transform( 0.141196, 0, 0, 0, 0.0293583, 0, 0, 0, 0.102675, -0.000576694, 0.00433897, 0.148258 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 9 )
+
+[node name="Button" type="MeshInstance" parent="."]
+transform = Transform( 0.0269563, 0, 0, 0, 0.0170254, 0, 0, 0, 0.010613, -0.129729, 0.0255133, -0.0944721 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="Button2" type="MeshInstance" parent="."]
+transform = Transform( 0.0269563, 0, 0, 0, 0.0170254, 0, 0, 0, 0.010613, -0.129729, 0.0255133, -0.0243216 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="Button3" type="MeshInstance" parent="."]
+transform = Transform( 0.0269563, 0, 0, 0, 0.0170254, 0, 0, 0, 0.010613, -0.00544372, 0.0255133, -0.0944721 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="Button4" type="MeshInstance" parent="."]
+transform = Transform( 0.0269563, 0, 0, 0, 0.0170254, 0, 0, 0, 0.010613, -0.00544372, 0.0255133, -0.0243216 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="Button5" type="MeshInstance" parent="."]
+transform = Transform( 0.0269563, 0, 0, 0, 0.0170254, 0, 0, 0, 0.010613, 0.116826, 0.0255133, -0.0944721 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="Button6" type="MeshInstance" parent="."]
+transform = Transform( 0.0269563, 0, 0, 0, 0.0170254, 0, 0, 0, 0.010613, 0.116826, 0.0255133, -0.0243216 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="Button7" type="MeshInstance" parent="."]
+transform = Transform( 0.0269563, 0, 0, 0, 0.0170254, 0, 0, 0, 0.010613, -0.0656737, 0.0255133, -0.0627545 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="Button8" type="MeshInstance" parent="."]
+transform = Transform( 0.0269563, 0, 0, 0, 0.0170254, 0, 0, 0, 0.010613, 0.0550316, 0.0255133, -0.0627545 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="WXButton" type="MeshInstance" parent="."]
+transform = Transform( 0.12703, 0, 0, 0, 0.0170254, 0, 0, 0, 0.0136098, 6.92531e-06, 0.0247153, 0.0173176 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 10 )
+
+[node name="Warning" type="MeshInstance" parent="."]
+transform = Transform( 0.0100206, 0, 0, 0, 0.0293765, 0, 0, 0, 0.010558, 0.11376, 0.00602104, -0.195232 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Watch" type="MeshInstance" parent="."]
+transform = Transform( 0.0100206, 0, 0, 0, 0.0293765, 0, 0, 0, 0.010558, 0.11376, 0.00602104, -0.164428 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Advisory" type="MeshInstance" parent="."]
+transform = Transform( 0.0100206, 0, 0, 0, 0.0293765, 0, 0, 0, 0.010558, 0.11376, 0.00602104, -0.13321 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Screen" type="MeshInstance" parent="."]
+transform = Transform( 0.131026, 0, 0, 0, 0.0293583, 0, 0, 0, 0.0469367, -0.0460695, 0.00407586, -0.164058 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
