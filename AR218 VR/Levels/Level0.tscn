@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -14,8 +14,11 @@
 [ext_resource path="res://Objects/Heart.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/Radio.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/Car.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Sounds/RadioSound.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Sounds/HeartSound.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/CarSound.ogg" type="AudioStream" id=17]
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=1]
 resource_name = "CarAnim"
 loop = true
 tracks/0/type = "value"
@@ -43,7 +46,7 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 45, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 45, 0 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=2]
 resource_name = "CarAnim"
 loop = true
 tracks/0/type = "value"
@@ -69,6 +72,240 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 45, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 45, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "HeartAnim"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Heart:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Heart:translation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Heart:translation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Heart:translation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "RadioRotate"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Radio:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 42.813, 0 ), Vector3( 53.76, -42.151, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "HeartAnim"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Heart:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Heart:translation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Heart:translation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Heart:translation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../Heart3:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "RadioRotate"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Radio:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 42.813, 0 ), Vector3( 53.76, -42.151, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "HeartAnim"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Heart:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Heart:translation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Heart:translation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Heart:translation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "RadioRotate"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Radio:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 42.813, 0 ), Vector3( 53.76, -42.151, 0 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -115,6 +352,18 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "points": PoolRealArray( -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -194,6 +443,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 42.813, 0 ), Vector3( 53.76, -42.151, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 47.849, 0 ), Vector3( 53.76, -42.151, 0 ) ]
+}
 
 [sub_resource type="Animation" id=13]
 resource_name = "HeartAnim"
@@ -256,428 +517,303 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 42.813, 0 ), Vector3( 53.76, -42.151, 0 ) ]
 }
-
-[sub_resource type="Animation" id=15]
-resource_name = "HeartAnim"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Heart:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("Heart:translation:x")
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("Heart:translation:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("Heart:translation:z")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-
-[sub_resource type="Animation" id=16]
-resource_name = "RadioRotate"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Radio:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 42.813, 0 ), Vector3( 53.76, -42.151, 0 ) ]
+"values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, -132.151, 0 ), Vector3( 53.76, -42.151, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "HeartAnim"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Heart:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("Heart:translation:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("Heart:translation:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("Heart:translation:z")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-
-[sub_resource type="Animation" id=18]
-resource_name = "RadioRotate"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Radio:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 42.813, 0 ), Vector3( 53.76, -42.151, 0 ) ]
-}
-
-[sub_resource type="Animation" id=21]
-resource_name = "HeartAnim"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Heart:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("Heart:translation:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("Heart:translation:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("Heart:translation:z")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0, -15.359, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-
-[sub_resource type="Animation" id=22]
-resource_name = "RadioRotate"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Radio:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 53.76, -42.151, 0 ), Vector3( 53.76, 42.813, 0 ), Vector3( 53.76, -42.151, 0 ) ]
-}
-
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=15]
 material = ExtResource( 3 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=16]
 albedo_color = Color( 0.254902, 0.254902, 0.254902, 1 )
 albedo_texture = ExtResource( 6 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=17]
 albedo_texture = ExtResource( 5 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=18]
 albedo_color = Color( 0.160784, 0.0627451, 0, 1 )
 albedo_texture = ExtResource( 7 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=19]
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=20]
 
 [node name="Level0" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.299118, -1.52588e-05, 0.0146179 )
 
 [node name="Car" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1.80086, 0, 2.10398, 0, 2.76944, 0, -2.10398, 0, 1.80086, -12.7008, 0.729241, 11.8387 )
+transform = Transform( 1.95829, 0, 1.95829, 0, 2.76944, 0, -1.95829, 0, 1.95829, -12.7008, 0.729241, 11.8387 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Car"]
 autoplay = "CarAnim"
-anims/CarAnim = SubResource( 19 )
+anims/CarAnim = SubResource( 1 )
+
+[node name="CarSound" type="AudioStreamPlayer3D" parent="Car"]
+stream = ExtResource( 17 )
+unit_size = 5.0
+autoplay = true
+max_distance = 10.0
 
 [node name="Car2" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1.80086, 0, 2.10398, 0, 2.76944, 0, -2.10398, 0, 1.80086, 12.4903, 0.729241, -12.9885 )
+transform = Transform( 1.95829, 0, 1.95829, 0, 2.76944, 0, -1.95829, 0, 1.95829, 12.4903, 0.729241, -12.9885 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Car2"]
 autoplay = "CarAnim"
-anims/CarAnim = SubResource( 20 )
+anims/CarAnim = SubResource( 2 )
+
+[node name="CarSound" type="AudioStreamPlayer3D" parent="Car2"]
+stream = ExtResource( 17 )
+unit_size = 5.0
+autoplay = true
+max_distance = 10.0
 
 [node name="Heart" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -15.359 )
 
 [node name="HeartSpin" type="AnimationPlayer" parent="Heart"]
 autoplay = "HeartAnim"
-anims/HeartAnim = SubResource( 9 )
-anims/RadioRotate = SubResource( 10 )
+anims/HeartAnim = SubResource( 3 )
+anims/RadioRotate = SubResource( 4 )
+
+[node name="HeartSound" type="AudioStreamPlayer3D" parent="Heart"]
+stream = ExtResource( 16 )
+unit_size = 7.5
+autoplay = true
+max_distance = 10.0
 
 [node name="Heart2" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -0.359 )
 
 [node name="HeartSpin" type="AnimationPlayer" parent="Heart2"]
 autoplay = "HeartAnim"
-anims/HeartAnim = SubResource( 11 )
-anims/RadioRotate = SubResource( 12 )
+anims/HeartAnim = SubResource( 5 )
+anims/RadioRotate = SubResource( 6 )
+
+[node name="HeartSound" type="AudioStreamPlayer3D" parent="Heart2"]
+stream = ExtResource( 16 )
+unit_size = 7.5
+autoplay = true
+max_distance = 10.0
 
 [node name="Heart3" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5101, 1, 0.396263 )
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 14.5101, 1, 0.396263 )
 
 [node name="HeartSpin" type="AnimationPlayer" parent="Heart3"]
 autoplay = "HeartAnim"
-anims/HeartAnim = SubResource( 13 )
-anims/RadioRotate = SubResource( 14 )
+anims/HeartAnim = SubResource( 7 )
+anims/RadioRotate = SubResource( 8 )
+
+[node name="HeartSound" type="AudioStreamPlayer3D" parent="Heart3"]
+stream = ExtResource( 16 )
+unit_size = 7.5
+autoplay = true
+max_distance = 10.0
 
 [node name="Heart4" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.489872, 1, 16.3963 )
 
 [node name="HeartSpin" type="AnimationPlayer" parent="Heart4"]
 autoplay = "HeartAnim"
-anims/HeartAnim = SubResource( 15 )
-anims/RadioRotate = SubResource( 16 )
+anims/HeartAnim = SubResource( 9 )
+anims/RadioRotate = SubResource( 10 )
+
+[node name="HeartSound" type="AudioStreamPlayer3D" parent="Heart4"]
+stream = ExtResource( 16 )
+unit_size = 7.5
+autoplay = true
+max_distance = 10.0
 
 [node name="Radio" parent="." instance=ExtResource( 13 )]
 transform = Transform( 8.17574, -5.96892, -4.37499, 0, 6.51926, -8.89441, 7.40058, 6.59412, 4.83324, -9.21153, 3.12456, -16.2589 )
 
 [node name="RadioBounce" type="AnimationPlayer" parent="Radio"]
 autoplay = "RadioRotate"
-anims/HeartAnim = SubResource( 17 )
-anims/RadioRotate = SubResource( 18 )
+anims/HeartAnim = SubResource( 11 )
+anims/RadioRotate = SubResource( 12 )
+
+[node name="RadioAlarm" type="AudioStreamPlayer3D" parent="Radio"]
+stream = ExtResource( 15 )
+unit_size = 5.0
+autoplay = true
+max_distance = 10.0
 
 [node name="Radio2" parent="." instance=ExtResource( 13 )]
 transform = Transform( 8.17574, -5.96892, -4.37499, 0, 6.51926, -8.89441, 7.40058, 6.59412, 4.83324, 11.4761, 3.12456, 11.0776 )
 
 [node name="RadioBounce" type="AnimationPlayer" parent="Radio2"]
 autoplay = "RadioRotate"
-anims/HeartAnim = SubResource( 21 )
-anims/RadioRotate = SubResource( 22 )
+anims/HeartAnim = SubResource( 13 )
+anims/RadioRotate = SubResource( 14 )
+
+[node name="RadioAlarm" type="AudioStreamPlayer3D" parent="Radio2"]
+transform = Transform( 0.0906803, -1.11759e-08, 0, -3.72529e-09, 0.0906803, -5.58794e-09, -1.86265e-09, -3.72529e-09, 0.0906803, 0, 0, 0 )
+stream = ExtResource( 15 )
+unit_size = 5.0
+autoplay = true
+max_distance = 10.0
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 50, 0, 0, 0, 0.5, 0, 0, 0, 50, 0, -0.508487, 0 )
 
 [node name="Floor" type="MeshInstance" parent="Ground"]
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Cieling" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200.309, 0 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 17 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Wall1" type="MeshInstance" parent="Ground"]
 transform = Transform( 0.00053176, 0.01, 0.000274018, -99.9999, 0.000532186, -0.152757, -0.00152772, -2.7319e-06, 0.999999, 0.976004, 100, 0 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 18 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Wall2" type="MeshInstance" parent="Ground"]
 transform = Transform( 1.91025e-13, 4.37114e-08, 0.0235692, 99.9772, -4.37114e-08, 0, 4.37014e-06, 1, -1.03024e-09, -0.98973, 100, 0 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 18 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Wall3" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -100, 0, 0.01, -4.37114e-08, 0.000755157, 100, 0.992293 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 18 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Wall4" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -100, 0, 0.01, -4.37114e-08, 0.000864105, 100, -0.989919 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 18 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Window" type="MeshInstance" parent="Ground"]
 transform = Transform( 1.91025e-13, 4.37114e-08, 0.0235692, 21.2959, -9.31084e-09, 0, -8.74029e-07, -0.2, 2.06049e-10, 0.976004, 134.403, -0.468285 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Window2" type="MeshInstance" parent="Ground"]
 transform = Transform( 1.91025e-13, 4.37114e-08, 0.0235692, 21.2959, -9.31084e-09, 0, -8.74029e-07, -0.2, 2.06049e-10, 0.976004, 84.0582, 0.43102 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Window3" type="MeshInstance" parent="Ground"]
 transform = Transform( 1.91025e-13, 4.37114e-08, 0.0235692, 21.2959, -9.31084e-09, 0, -8.74029e-07, -0.2, 2.06049e-10, -0.991325, 86.1322, -0.431016 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Window4" type="MeshInstance" parent="Ground"]
 transform = Transform( 1.91025e-13, 4.37114e-08, 0.0235692, 21.2959, -9.31084e-09, 0, -8.74029e-07, -0.2, 2.06049e-10, -0.991325, 141.755, 0.468288 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Window5" type="MeshInstance" parent="Ground"]
 transform = Transform( -8.74029e-07, -0.2, 1.19209e-09, 21.2959, -9.31084e-09, 0, -2.00089e-13, -5.72205e-08, -0.0235692, -0.538645, 86.1322, -0.998723 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Window6" type="MeshInstance" parent="Ground"]
 transform = Transform( -8.74029e-07, -0.2, 1.19209e-09, 21.2959, -9.31084e-09, 0, -2.00089e-13, -5.72205e-08, -0.0235692, 0.36066, 141.755, -0.998723 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Window7" type="MeshInstance" parent="Ground"]
 transform = Transform( -8.74029e-07, -0.2, 1.19209e-09, 21.2959, -9.31084e-09, 0, -2.00089e-13, -5.72205e-08, -0.0235692, -0.478645, 144.132, 0.992816 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Window8" type="MeshInstance" parent="Ground"]
 transform = Transform( -8.74029e-07, -0.2, 1.19209e-09, 21.2959, -9.31084e-09, 0, -2.00089e-13, -5.72205e-08, -0.0235692, 0.42066, 83.755, 0.992816 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
 transform = Transform( 6.27142, 0, 0, 0, 1, 0, 0, 0, 6.27142, 0, 0, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2" type="CollisionShape" parent="Ground"]
 transform = Transform( 6.27142, 0, 0, 0, 1, 0, 0, 0, 6.27142, 0, 195.411, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Ground"]
 transform = Transform( -2.74132e-07, -0.01, 0, 627.142, -4.37114e-08, 0, 0, 0, 6.27142, -1.02937, 100.633, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape4" type="CollisionShape" parent="Ground"]
 transform = Transform( -2.74132e-07, -0.01, 0, 627.142, -4.37114e-08, 0, 0, 0, 6.27142, 0.986663, 100.633, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape5" type="CollisionShape" parent="Ground"]
 transform = Transform( 1.19827e-14, 4.37114e-10, 6.27142, 627.142, -4.37114e-08, 0, 2.74132e-07, 0.01, -2.74132e-07, -0.0151833, 100.633, -0.913276 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape6" type="CollisionShape" parent="Ground"]
 transform = Transform( 1.19827e-14, 4.37114e-10, 6.27142, 627.142, -4.37114e-08, 0, 2.74132e-07, 0.01, -2.74132e-07, -0.0151833, 100.633, 0.957115 )
-shape = SubResource( 6 )
+shape = SubResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
