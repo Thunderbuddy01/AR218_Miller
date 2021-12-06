@@ -827,7 +827,7 @@ shadow_enabled = true
 shadow_color = Color( 1, 1, 1, 1 )
 
 [node name="FirstPersonPlayer" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1.22162, 0, 0, 0, 1, 0.127558, 0.172399, 0.00964356 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127558, 0.172399, 0.00964356 )
 
 [node name="Desk" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1.52973e-07, 0, -3.49961, 0, 2, 0, 4.53001, 0, -1.98013e-07, 5.164, 1, 0.296263 )
@@ -842,7 +842,7 @@ transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 5
 transform = Transform( 0.706959, 0, 0.707255, 0, 1, 0, -0.707255, 0, 0.706959, 4.75845, 2.19929, 3.21705 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.987, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.5088, 0 )
 shadow_enabled = true
 omni_range = 4096.0
 
