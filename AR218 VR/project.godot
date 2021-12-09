@@ -14,6 +14,10 @@ config/name="3D_World_Workshop"
 run/main_scene="res://Levels/Level0.tscn"
 config/icon="res://icon.png"
 
+[gdnative]
+
+singletons=[ "res://addons/godot-oculus/godot_oculus.gdnlib" ]
+
 [input]
 
 move_forward={
